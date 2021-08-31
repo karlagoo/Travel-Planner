@@ -22,13 +22,21 @@ Trip.init(
                 id: 'Traveler.id'
             },
 
-        location_id: {
-            type: DataTypes.INTEGER,   
-            references: {
-                model: 'Location',
-                id: 'Location.id'
+            location_id: {
+                type: DataTypes.INTEGER,
+                references: {
+                    model: 'Location',
+                    id: 'Location.id'
+                }
             }
         }
-    }
+    },
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'trips'
     }
 );
+module.exports = Trips;
